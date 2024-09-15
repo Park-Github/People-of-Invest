@@ -1,0 +1,4 @@
+### IDE project files and cache
+.idea/
+.vscode/*
+!.vscode/extensions.json
