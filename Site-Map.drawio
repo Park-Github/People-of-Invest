@@ -189,15 +189,6 @@
             <Array as="points" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Ag-aDaCQ0mfmiK7zDWWH-136" value="" style="edgeStyle=elbowEdgeStyle;elbow=horizontal;strokeWidth=2;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" target="Ag-aDaCQ0mfmiK7zDWWH-137">
-          <mxGeometry x="-23" y="135.5" width="100" height="100" as="geometry">
-            <mxPoint x="120" y="725.4999999999998" as="sourcePoint" />
-            <mxPoint x="222.5" y="800" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="120.5" y="760" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
         <mxCell id="Ag-aDaCQ0mfmiK7zDWWH-137" value="백테스팅 설정" style="rounded=1;fillColor=#23445D;gradientColor=none;strokeColor=none;fontColor=#FFFFFF;fontStyle=1;fontFamily=Tahoma;fontSize=14" vertex="1" parent="1">
           <mxGeometry x="250" y="770" width="130" height="60" as="geometry" />
         </mxCell>
@@ -225,6 +216,21 @@
         </mxCell>
         <mxCell id="Ag-aDaCQ0mfmiK7zDWWH-141" value="벤치마크 설정" style="rounded=1;fillColor=#23445D;gradientColor=none;strokeColor=none;fontColor=#FFFFFF;fontStyle=1;fontFamily=Tahoma;fontSize=14" vertex="1" parent="1">
           <mxGeometry x="860" y="545.5" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ag-aDaCQ0mfmiK7zDWWH-143" value="" style="fillColor=#10205E;strokeColor=none;opacity=30;" vertex="1" parent="1">
+          <mxGeometry x="40" y="430" width="150" height="325" as="geometry" />
+        </mxCell>
+        <mxCell id="Ag-aDaCQ0mfmiK7zDWWH-146" value="" style="fillColor=#10205E;strokeColor=none;opacity=30;" vertex="1" parent="1">
+          <mxGeometry x="460" y="430" width="150" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="Ag-aDaCQ0mfmiK7zDWWH-147" value="" style="fillColor=#10205E;strokeColor=none;opacity=30;" vertex="1" parent="1">
+          <mxGeometry x="997" y="440" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Ag-aDaCQ0mfmiK7zDWWH-149" value="Depth 1" style="fillColor=#10739E;strokeColor=none;opacity=30;" vertex="1" parent="1">
+          <mxGeometry x="170" y="140" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Ag-aDaCQ0mfmiK7zDWWH-150" value="Depth 2" style="fillColor=#10205E;strokeColor=none;opacity=30;" vertex="1" parent="1">
+          <mxGeometry x="400" y="140" width="150" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
