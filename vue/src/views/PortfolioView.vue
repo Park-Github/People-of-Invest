@@ -1,7 +1,13 @@
+<script setup lang="ts">
+import Page from "@/components/layout/Page.vue";
+</script>
+
 <template>
-    <div class="portfolio">
-        <h1>This is an about page</h1>
-    </div>
+    <Page>
+        <div class="portfolio">
+            <h1>Test</h1>
+        </div>
+    </Page>
 </template>
 
 <style>

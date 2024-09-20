@@ -1,11 +1,19 @@
 <script setup lang="ts">
-const links = document.querySelectorAll(".sidebar .sidebar-menu li a");
-links.forEach((link) => {
-    console.log(link);
-    link.addEventListener("click", (e) => {
-        console.log(e.target);
-    });
+import { onMounted } from "vue";
+
+onMounted(() => {
+    setupLinks();
 });
+
+function setupLinks() {
+    const links = document.querySelectorAll(".sidebar .sidebar-menu li a");
+    links.forEach((link) => {
+        console.log(link);
+        link.addEventListener("click", (e) => {
+            console.log(e.target);
+        });
+    });
+}
 </script>
 
 <template>
@@ -60,12 +68,7 @@ links.forEach((link) => {
                     </RouterLink>
                 </li>
                 <li class="nav-item dropdown">
-                    <a
-                        href="javascript:void(0);"
-                        class="dropdown-toggle"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                    >
+                    <a href="javascript:void(0);" class="dropdown-toggle">
                         <span class="icon-holder">
                             <i class="c-pink-500 ti-clipboard"></i>
                         </span>
@@ -86,16 +89,11 @@ links.forEach((link) => {
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a
-                        class="dropdown-toggle"
-                        href="javascript:void(0);"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                    >
+                    <a class="dropdown-toggle" href="javascript:void(0);">
                         <span class="icon-holder">
                             <i class="c-orange-500 ti-pie-chart"></i>
                         </span>
-                        <span class="title">나의포트폴리오</span>
+                        <span class="title">포트폴리오</span>
                         <span class="arrow">
                             <i class="ti-angle-right"></i>
                         </span>
