@@ -18,6 +18,7 @@ module.exports = {
             {
                 semi: true,
                 tabWidth: 4,
+                endOfLine: "auto",
                 quoteProps: "consistent",
                 trailingComma: "es5",
                 htmlWhitespaceSensitivity: "ignore",
