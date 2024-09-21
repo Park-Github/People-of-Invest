@@ -1,3 +1,46 @@
+<script setup lang="ts">
+import { onMounted, inject, ref, nextTick } from "vue";
+
+onMounted(() => {});
+
+// Inject the provided toggle function
+const toggleSidebar = inject("toggleSidebar");
+
+// State to track if search is active
+const isSearchActive = ref(false);
+
+// Reference for the input element
+const searchInput = ref<HTMLInputElement | null>(null);
+
+// Toggle search input visibility and focus
+const toggleSearch = () => {
+    isSearchActive.value = !isSearchActive.value;
+
+    // Wait for DOM to update, then focus the input
+    if (isSearchActive.value) {
+        nextTick(() => {
+            searchInput.value?.focus();
+        });
+    }
+};
+
+// // State to track if search is active
+// const isSearchActive = ref(false);
+
+// // Reference for the input element
+// const searchInput = ref<HTMLInputElement | null>(null);
+
+// // Toggle search input visibility and focus
+// const toggleSearch = () => {
+//     isSearchActive.value = !isSearchActive.value;
+
+//     // If the search is active, focus the input
+//     if (isSearchActive.value && searchInput.value) {
+//         searchInput.value.focus();
+//     }
+// };
+</script>
+
 <template>
     <header class="header navbar">
         <div class="header-container">
@@ -7,24 +50,31 @@
                         id="sidebar-toggle"
                         class="sidebar-toggle"
                         href="javascript:void(0);"
+                        @click="toggleSidebar"
                     >
                         <i class="ti-menu"></i>
                     </a>
                 </li>
-                <li class="search-box">
+                <li class="search-box" :class="{ active: isSearchActive }">
                     <a
                         class="search-toggle no-pdd-right"
                         href="javascript:void(0);"
+                        @click="toggleSearch"
                     >
                         <i class="search-icon ti-search pdd-right-10"></i>
                         <i class="search-icon-close ti-close pdd-right-10"></i>
                     </a>
                 </li>
-                <li class="search-input">
+                <li
+                    class="search-input"
+                    :class="{ active: isSearchActive }"
+                    v-show="isSearchActive"
+                >
                     <input
                         class="form-control"
                         type="text"
                         placeholder="Search..."
+                        ref="searchInput"
                     />
                 </li>
             </ul>
@@ -373,4 +423,37 @@
     </header>
 </template>
 
-<style scoped></style>
+<style scoped lang="scss">
+.search-input {
+    transition: opacity 0.3s ease;
+}
+.search-input {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.search-input.active {
+    opacity: 1;
+}
+
+// .search-input {
+//     display: none;
+// }
+// .search-input.active {
+//     display: inline-block;
+// }
+.search-box {
+    .search-icon-close {
+        display: none;
+    }
+
+    &.active {
+        .search-icon {
+            display: none;
+        }
+
+        .search-icon-close {
+            display: inline-block;
+        }
+    }
+}
+</style>

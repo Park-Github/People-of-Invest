@@ -59,11 +59,15 @@
               opacity: 0;
             }
 
-            &.open {
-              ul.dropdown-menu {
-                display: none !important;
-              }
+            ul.dropdown-menu.show {
+              display: none !important;
             }
+
+            // &.open {
+            //   ul.dropdown-menu {
+            //     display: none !important;
+            //   }
+            // }
           }
         }
       }
@@ -94,11 +98,15 @@
               }
             }
 
-            &.open {
-              > ul.dropdown-menu {
-                display: block !important;
-              }
+            > ul.dropdown-menu.show {
+              display: block !important;
             }
+
+            // &.open {
+            //   > ul.dropdown-menu {
+            //     display: block !important;
+            //   }
+            // }
           }
         }
       }
@@ -225,32 +233,61 @@
         }
       }
 
-      &.open {
-        > a {
-          color: $default-dark;
+      > .dropdown-toggle.show {
+        color: $default-dark;
 
-          .icon-holder {
-            color: $default-info;
-          }
-
-          > .arrow {
-            transform: rotate(90deg);
-          }
+        .icon-holder {
+          color: $default-info;
         }
 
-        > .dropdown-menu {
-          display: block;
-
-          .dropdown-menu {
-            padding-left: 20px;
-          }
-
-          .arrow {
-            line-height: 25px;
-          }
+        > .arrow {
+          transform: rotate(90deg);
         }
       }
+
+      > .dropdown-menu.show {
+        display: block;
+
+        .dropdown-menu {
+          padding-left: 20px;
+        }
+
+        .arrow {
+          line-height: 25px;
+        }
+      }
+      // &.open {
+      //   > a {
+      //     color: $default-dark;
+
+      //     .icon-holder {
+      //       color: $default-info;
+      //     }
+
+      //     > .arrow {
+      //       transform: rotate(90deg);
+      //     }
+      //   }
+
+      //   > .dropdown-menu {
+      //     display: block;
+
+      //     .dropdown-menu {
+      //       padding-left: 20px;
+      //     }
+
+      //     .arrow {
+      //       line-height: 25px;
+      //     }
+      //   }
+      // }
     }
+
+    /* dropdown floating style off */
+    // .dropdown-menu {
+    //   position: relative !important;
+    //   transform: translateY(0) !important;
+    // }
 
     a {
       color: $default-text-color;
@@ -264,6 +301,32 @@
         .icon-holder {
           color: $default-info;
         }
+      }
+    }
+
+    .dropdown-toggle.show {
+      color: $default-dark;
+
+      .icon-holder {
+        color: $default-info;
+      }
+
+      > .arrow {
+        transform: rotate(90deg);
+      }
+    }
+
+    .dropdown-menu.show {
+      display: block;
+      position: relative !important;
+      transform: translate(0) !important;
+
+      .dropdown-menu {
+        padding-left: 20px;
+      }
+
+      .arrow {
+        line-height: 25px;
       }
     }
   }
@@ -361,11 +424,15 @@
                 opacity: 0;
               }
 
-              &.open {
-                ul.dropdown-menu {
-                  display: none !important;
-                }
+              ul.dropdown-menu.show {
+                display: none !important;
               }
+
+              // &.open {
+              //   ul.dropdown-menu {
+              //     display: none !important;
+              //   }
+              // }
             }
           }
         }
@@ -396,11 +463,15 @@
                 }
               }
 
-              &.open {
-                > ul.dropdown-menu {
-                  display: block !important;
-                }
+              ul.dropdown-menu.show {
+                display: block !important;
               }
+
+              // &.open {
+              //   > ul.dropdown-menu {
+              //     display: block !important;
+              //   }
+              // }
             }
           }
         }
@@ -439,11 +510,15 @@
               }
             }
 
-            &.open {
-              > ul.dropdown-menu {
-                display: block !important;
-              }
+            ul.dropdown-menu.show {
+              display: block !important;
             }
+
+            // &.open {
+            //   > ul.dropdown-menu {
+            //     display: block !important;
+            //   }
+            // }
           }
         }
       }

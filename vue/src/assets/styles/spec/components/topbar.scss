@@ -143,28 +143,28 @@
     }
   }
 
-  .search-box {
-    .search-icon-close {
-      display: none;
-    }
+  // .search-box {
+  //   .search-icon-close {
+  //     display: none;
+  //   }
 
-    &.active {
-      .search-icon {
-        display: none;
-      }
+  //   &.active {
+  //     .search-icon {
+  //       display: none;
+  //     }
 
-      .search-icon-close {
-        display: inline-block;
-      }
-    }
-  }
+  //     .search-icon-close {
+  //       display: inline-block;
+  //     }
+  //   }
+  // }
 
   .search-input {
-    display: none;
+    // display: none;
 
-    &.active {
-      display: inline-block;
-    }
+    // &.active {
+    //   display: inline-block;
+    // }
 
     input {
       background-color: transparent;

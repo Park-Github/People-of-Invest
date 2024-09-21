@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted } from "vue";
+import { onMounted, inject } from "vue";
 
 onMounted(() => {
     setupLinks();
@@ -8,12 +8,15 @@ onMounted(() => {
 function setupLinks() {
     const links = document.querySelectorAll(".sidebar .sidebar-menu li a");
     links.forEach((link) => {
-        console.log(link);
-        link.addEventListener("click", (e) => {
-            console.log(e.target);
-        });
+        // console.log(link);
+        // link.addEventListener("click", (e) => {
+        //     console.log(e.currentTarget);
+        // });
     });
 }
+
+// Inject the provided toggle function
+const toggleSidebar = inject("toggleSidebar");
 </script>
 
 <template>
@@ -42,7 +45,11 @@ function setupLinks() {
                     </div>
                     <div class="peer">
                         <div class="mobile-toggle sidebar-toggle">
-                            <a href="" class="td-n">
+                            <a
+                                href="javascript:void(0);"
+                                class="td-n"
+                                @click="toggleSidebar"
+                            >
                                 <i class="ti-arrow-circle-left"></i>
                             </a>
                         </div>
@@ -54,44 +61,70 @@ function setupLinks() {
                 <li class="nav-item mT-30 actived">
                     <RouterLink to="/" class="sidebar-link">
                         <span class="icon-holder">
-                            <i class="c-blue-500 ti-home"></i>
+                            <i class="c-deep-orange-500 ti-home"></i>
                         </span>
                         <span class="title">홈</span>
                     </RouterLink>
                 </li>
-                <li class="nav-item">
-                    <RouterLink to="/" class="sidebar-link">
-                        <span class="icon-holder">
-                            <i class="c-blue-500 ti-search"></i>
-                        </span>
-                        <span class="title">종목검색</span>
-                    </RouterLink>
-                </li>
                 <li class="nav-item dropdown">
-                    <a href="javascript:void(0);" class="dropdown-toggle">
+                    <a
+                        href="javascript:void(0);"
+                        class="dropdown-toggle"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                    >
                         <span class="icon-holder">
-                            <i class="c-pink-500 ti-clipboard"></i>
+                            <i class="c-brown-500 ti-stats-up"></i>
                         </span>
-                        <span class="title">투자정보</span>
+                        <span class="title">종목</span>
                         <span class="arrow">
                             <i class="ti-angle-right"></i>
                         </span>
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a class="sidebar-link" href="a.html">
-                                종목/지수 동향
-                            </a>
+                            <a class="sidebar-link" href="a.html">종목 검색</a>
                         </li>
                         <li>
-                            <a class="sidebar-link" href="b.html">뉴스</a>
+                            <a class="sidebar-link" href="b.html">
+                                기술적 분석
+                            </a>
                         </li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="dropdown-toggle" href="javascript:void(0);">
+                    <a
+                        href="javascript:void(0);"
+                        class="dropdown-toggle"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                    >
                         <span class="icon-holder">
-                            <i class="c-orange-500 ti-pie-chart"></i>
+                            <i class="c-blue-500 ti-world"></i>
+                        </span>
+                        <span class="title">마켓</span>
+                        <span class="arrow">
+                            <i class="ti-angle-right"></i>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="sidebar-link" href="a.html">뉴스</a>
+                        </li>
+                        <li>
+                            <a class="sidebar-link" href="b.html">인덱스</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a
+                        class="dropdown-toggle"
+                        href="javascript:void(0);"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                    >
+                        <span class="icon-holder">
+                            <i class="c-purple-500 ti-pie-chart"></i>
                         </span>
                         <span class="title">포트폴리오</span>
                         <span class="arrow">
@@ -114,13 +147,25 @@ function setupLinks() {
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <RouterLink to="/" class="sidebar-link">
+                        <span class="icon-holder">
+                            <i class="c-pink-500 ti-bell"></i>
+                        </span>
+                        <span class="title">알람</span>
+                    </RouterLink>
+                </li>
+                <li class="nav-item">
+                    <RouterLink to="/" class="sidebar-link">
+                        <span class="icon-holder">
+                            <i class="c-light-blue-500 ti-user"></i>
+                        </span>
+                        <span class="title">프로필 설정</span>
+                    </RouterLink>
+                </li>
             </ul>
         </div>
     </div>
 </template>
 
-<style scoped>
-.dropdown-menu {
-    display: block;
-}
-</style>
+<style scoped></style>
