@@ -1,0 +1,117 @@
+//----------------------------------------------------------
+// @Clearfix
+//----------------------------------------------------------
+
+@mixin clearfix {
+  &::before,
+  &::after {
+    content: ' ';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+//----------------------------------------------------------
+// @Placeholder
+//
+// 사용예 :
+// @include placeholder {
+//   color: lighten($default-text-color, 20%);
+//   font-style: italic;
+// }
+//----------------------------------------------------------
+
+@mixin placeholder {
+  &::-webkit-input-placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+}
+
+// ---------------------------------------------------------
+// @Media Query Mixin
+// ---------------------------------------------------------
+
+// Mixin used for custom rules that don't follow
+// any of the following premade media queries.
+
+@mixin mq($condition) {
+  @media #{$condition} {
+    @content;
+  }
+}
+
+// Mixin used to match certain breakpoint
+// and all devices above it.
+
+@mixin from($breakpoint) {
+  @media screen and (min-width: $breakpoint){
+    @content;
+  }
+}
+
+// Mixin used to match all devices under certain breakpoint.
+
+@mixin to($breakpoint) {
+  @media screen and (max-width: ($breakpoint - 1px)) {
+    @content;
+  }
+}
+
+// Mixin used to match the devices between 2 breakpoints.
+
+@mixin between($start, $end){
+  @media screen and (min-width: $start) and (max-width: ($end - 1px)) {
+    @content;
+  }
+}
+
+// ---------------------------------------------------------
+// @Media Queries Generator
+// ---------------------------------------------------------
+
+// Mixin used to generate responsive versions of css rules.
+
+@mixin mediaQueryCondition($mq) {
+  $breakpointFound: false;
+
+  @each $breakpoint in $breakpoints {
+    $alias: nth($breakpoint, 1);
+    $condition: nth($breakpoint, 2);
+
+    @if $mq == $alias and $condition {
+      $breakpointFound: true;
+
+      @media #{$condition} {
+        @content;
+      }
+    }
+  }
+
+  @if $breakpointFound == false {
+    @warn "Oops! Breakpoint ‘#{$mq}’ does not exist \:";
+  }
+}
+
+// ---------------------------------------------------------
+// @Responsive Suffix Generator
+// ---------------------------------------------------------
+
+// Mixin used to generate responsive suffixes for classes (i.e. m-10@sm+).
+
+
+@mixin generateResponsive() {
+  @each $breakpoint in $breakpoints {
+    $breakpointAlias     : nth($breakpoint, 1) !global;
+    $breakpointCondition : nth($breakpoint, 2);
+
+    @include mediaQueryCondition($breakpointAlias) {
+      @content;
+    }
+
+    $breakpointAlias: null !global;
+  }
+}

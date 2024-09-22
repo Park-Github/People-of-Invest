@@ -1,0 +1,111 @@
+// ---------------------------------------------------------
+// @Breakpoints
+// ---------------------------------------------------------
+
+$breakpoint-xl : 1440px;
+$breakpoint-lg : 1200px;
+$breakpoint-md : 992px;
+$breakpoint-sm : 768px;
+$breakpoint-xs : 0;
+
+$breakpoints: (
+    "xl\\+" "screen and (min-width: #{$breakpoint-xl})",
+    "lg\\+" "screen and (min-width: #{$breakpoint-lg})",
+    "md\\+" "screen and (min-width: #{$breakpoint-md})",
+    "sm\\+" "screen and (min-width: #{$breakpoint-sm})",
+    "xs\\+" "screen and (min-width: #{$breakpoint-xs})",
+
+    "xl-" "screen and (max-width: #{$breakpoint-xl - 1px})",
+    "lg-" "screen and (max-width: #{$breakpoint-lg - 1px})",
+    "md-" "screen and (max-width: #{$breakpoint-md - 1px})",
+    "sm-" "screen and (max-width: #{$breakpoint-sm - 1px})",
+
+    "lg" "screen and (min-width: #{$breakpoint-lg - 1px}) and (max-width: #{$breakpoint-xl - 1px})",
+    "md" "screen and (min-width: #{$breakpoint-md - 1px}) and (max-width: #{$breakpoint-lg - 1px})",
+    "sm" "screen and (min-width: #{$breakpoint-sm - 1px}) and (max-width: #{$breakpoint-md - 1px})",
+);
+
+:root {
+    --primary-color      : #7774e7;
+    --success-color      : #37c936;
+    --danger-color       : #ff3c7e;
+    --info-color         : #0f9aee;
+    --warning-color      : #fc0;
+    --dark-color         : #313435;
+    --grey-color         : #565a5c;
+    --text-color         : #232433; 
+    --mute-color         : #72777a;
+
+    --heading-color: #232433;
+    --text-color: #232433;
+    --border-color: rgba(0, 0, 0, 0.0625);
+
+    --font-primary: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    --font-size: 0.875rem;
+
+    --breakpoint-xl      : 1440px;
+    --breakpoint-lg      : 1200px;
+    --breakpoint-md      : 992px;
+    --breakpoint-sm      : 768px;
+    --breakpoint-xs      : 0;
+
+    --collapsed-size: 70px;
+    --header-height: 65px;
+    --offscreen-size: 280px;
+
+    --side-nav-dark        : #313644;
+    --side-nav-dark-border : rgba(120, 130, 140, 0.3);
+    --side-nav-dark-font   : #99abb4;
+
+    --section-gap: 120px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    font-weight: normal;
+}
+
+:focus {
+    outline: none;
+}
+
+html, html a, body {
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        color: hsl(var(--text-color), 10%);
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
+hr {
+    border-top: 1px solid $border-color;
+}
+
+ul {
+    margin-bottom: 0;
+}
+
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+    font-family: var(--font-primary);
+    font-size: 14px;
+    color: var(--text-color);
+    transition: color 0.5s, background-color 0.5s;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
