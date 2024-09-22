@@ -16,5 +16,15 @@ export default defineConfig({
     },
     css: {
         devSourcemap: true,
+        preprocessorOptions: {
+            scss: {
+                additionalData: `
+                    @import "@/assets/scss/_materialColors.scss"; // material color 변수
+                    @import "@/assets/scss/_variables.scss"; // 사용자 정의 변수
+                    @import "@/assets/scss/_mixins.scss";   // 사용자 정의 믹스인
+                    @import "bootstrap/scss/bootstrap-utilities";   // Bootstrap SCSS
+                `,
+            },
+        },
     },
 });

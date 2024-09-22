@@ -1,3 +1,42 @@
-.clearfix {
-  @include clearfix;
+.layers {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.peers {
+  box-sizing: border-box;
+  display: flex !important;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-flow: row wrap;
+  height: auto;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.peer {
+  display: block;
+  height: auto;
+  flex: 0 0 auto;
+
+  > img {
+    max-width: none;
+  }
+  
+}
+
+.peer-greed {
+  flex: 1 1 auto;
+  // overflow: hidden;
+
+  > img {
+    max-width: 100%;
+  }
+
+  > .peer,
+  > .peers {
+    flex: 1 1 auto;
+  }
 }

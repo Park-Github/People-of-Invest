@@ -26,74 +26,74 @@ provide("toggleSidebar", handleSidebarToggle);
 
 <style scoped lang="scss">
 .page-container {
-  min-height: 100vh;
-  padding-left: var(--offscreen-size);
-  transition: all 0.2s ease;
+    min-height: 100vh;
+    padding-left: var(--offscreen-size);
+    transition: all 0.2s ease;
 
-//   @media (min-width: var(--breakpoint-md)) and (max-width: var(--breakpoint-xl)) {
-//     padding-left: var(--collapsed-size);
-//   }
+    @include media-breakpoint-between(lg, xxl) {
+        padding-left: var(--collapsed-size);
+    }
 
-//   @media (max-width: var(--breakpoint-md)) {
-//     padding-left: 0;
-//   }
+    @include media-breakpoint-down(lg) {
+        padding-left: 0;
+    }
 }
 
 .main-content {
-  padding: 85px 20px 20px;
-  min-height: calc(100vh - 61px);
+    padding: 85px 20px 20px;
+    min-height: calc(100vh - 61px);
 
-//   @media (max-width: var(--breakpoint-md)) {
-//     padding: 85px 5px 5px;
-//   }
+    @include media-breakpoint-down(lg) {
+        padding: 85px 5px 5px;
+    }
 }
 
 .remain-height {
-  height: calc(100vh - 126px);
+    height: calc(100vh - 126px);
 }
 
 .full-container {
-  left: var(--offscreen-size);
-  min-height: calc(100vh - #{var(--header-height)});
-  position: absolute;
-  right: 0;
-  top: var(--header-height);
-  transition: all 0.2s ease;
+    left: var(--offscreen-size);
+    min-height: calc(100vh - #{var(--header-height)});
+    position: absolute;
+    right: 0;
+    top: var(--header-height);
+    transition: all 0.2s ease;
 
-//   @media (min-width: var(--breakpoint-md)) and (max-width: var(--breakpoint-xl)) {
-//     left: 0;
-//     padding-left: var(--collapsed-size);
-//   }
+    @include media-breakpoint-between(lg, xxl) {
+        left: 0;
+        padding-left: var(--collapsed-size);
+    }
 
-//   @media (max-width: var(--breakpoint-md)) {
-//     left: 0;
-//   }
+    @include media-breakpoint-down(lg) {
+        left: 0;
+    }
 }
 
 .is-collapsed {
-  .page-container {
-    padding-left: var(--collapsed-size);
+    .page-container {
+        padding-left: var(--collapsed-size);
 
-    // @media (max-width: var(--breakpoint-md)) {
-    //   padding-left: 0;
-    // }
+        @include media-breakpoint-down(lg) {
+            padding-left: 0;
+        }
 
-    // @media (min-width: var(--breakpoint-md)) and (max-width: var(--breakpoint-xl)) {
-    //   padding-left: var(--offscreen-size);
-    // }
-  }
+        @include media-breakpoint-between(lg, xxl) {
+            padding-left: var(--offscreen-size);
+        }
+    }
 
-  .full-container {
-    left: var(--collapsed-size);
+    .full-container {
+        left: var(--collapsed-size);
 
-    // @media (max-width: var(--breakpoint-md)) {
-    //   left: 0;
-    // }
+        @include media-breakpoint-down(lg) {
+            left: 0;
+        }
 
-    // @media (min-width: var(--breakpoint-md)) and (max-width: var(--breakpoint-xl)) {
-    //   left: var(--offscreen-size);
-    //   padding-left: 0;
-    // }
-  }
+        @include media-breakpoint-between(lg, xxl) {
+            left: var(--offscreen-size);
+            padding-left: 0;
+        }
+    }
 }
 </style>
