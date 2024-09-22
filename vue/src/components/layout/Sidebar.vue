@@ -1,19 +1,7 @@
 <script setup lang="ts">
 import { onMounted, inject } from "vue";
 
-onMounted(() => {
-    setupLinks();
-});
-
-function setupLinks() {
-    const links = document.querySelectorAll(".sidebar .sidebar-menu li a");
-    links.forEach((link) => {
-        // console.log(link);
-        // link.addEventListener("click", (e) => {
-        //     console.log(e.currentTarget);
-        // });
-    });
-}
+onMounted(() => {});
 
 // Inject the provided toggle function
 const toggleSidebar = inject("toggleSidebar");
@@ -30,7 +18,7 @@ const toggleSidebar = inject("toggleSidebar");
                                 <div class="peer">
                                     <RouterLink to="/" class="logo">
                                         <img
-                                            src="@/assets/static/images/logo-gab.svg"
+                                            src="@/assets/static/images/logo-ga.svg"
                                             alt="로고"
                                         />
                                     </RouterLink>
@@ -161,6 +149,22 @@ const toggleSidebar = inject("toggleSidebar");
                             <i class="c-light-blue-500 ti-user"></i>
                         </span>
                         <span class="title">프로필 설정</span>
+                    </RouterLink>
+                </li>
+                <li class="nav-item">
+                    <RouterLink to="/signin" class="sidebar-link">
+                        <span class="icon-holder">
+                            <i class="c-gray-500 ti-user"></i>
+                        </span>
+                        <span class="title">로그인</span>
+                    </RouterLink>
+                </li>
+                <li class="nav-item">
+                    <RouterLink to="/signup" class="sidebar-link">
+                        <span class="icon-holder">
+                            <i class="c-gray-500 ti-user"></i>
+                        </span>
+                        <span class="title">회원가입</span>
                     </RouterLink>
                 </li>
             </ul>
