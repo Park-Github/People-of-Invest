@@ -9,7 +9,7 @@ import lombok.*;
 @ToString
 @Builder
 @JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class MemberDto {
+public class RequestDto {
     private Long id;
     private String email;
     private String password;
