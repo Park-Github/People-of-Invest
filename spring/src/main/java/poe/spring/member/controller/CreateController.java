@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import poe.spring.common.Api;
-import poe.spring.member.dto.MemberDto;
-import poe.spring.member.entity.Member;
+import poe.spring.member.dto.RequestDto;
 import poe.spring.member.service.CRUDService;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/create/user")
@@ -20,11 +22,15 @@ public class CreateController {
     private final CRUDService crudService;
 
     @PostMapping("/email")
-    public ResponseEntity<Api<Member>> createUser(@RequestBody MemberDto memberDto) {
+    public ResponseEntity<Api<Map<String, Object>>> createUser(@RequestBody RequestDto requestDto) {
 
-        crudService.createUser(memberDto);
+        Long id = crudService.createUser(requestDto);
 
-        Api<Member> response = Api.<Member>builder()
+        Map<String, Object> data = new HashMap<>();
+        data.put("member_id", id);
+
+        Api<Map<String, Object>> response = Api.<Map<String, Object>>builder()
+                .data(data)
                 .statusCode(HttpStatus.CREATED.getReasonPhrase())
                 .resultMessage("Created a new member successfully.").build();
         return ResponseEntity.status(HttpStatus.CREATED)
