@@ -1,4 +1,4 @@
-package poe.spring.member.entity;
+package poe.spring.domain.member.model.entity;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -15,15 +15,14 @@ public class SnsMember {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
-    @JoinColumn(name = "member_id")
-    private Member member;
-
     private String provider;
 
     private String token;
 
     @Column(name = "refresh_token")
     private String refreshToken;
+
+    @OneToOne @JoinColumn(name = "member_id")
+    private Member member;
 
 }

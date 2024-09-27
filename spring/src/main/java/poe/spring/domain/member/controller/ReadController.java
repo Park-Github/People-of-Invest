@@ -1,19 +1,19 @@
-package poe.spring.member.controller;
+package poe.spring.domain.member.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import poe.spring.common.Api;
-import poe.spring.member.dto.ResponseDto;
-import poe.spring.member.service.CRUDService;
+import poe.spring.domain.member.dto.ResponseDto;
+import poe.spring.domain.member.service.MemberCrudService;
 
 @RestController
 @RequestMapping("/read/user")
 @RequiredArgsConstructor
 public class ReadController {
 
-    private final CRUDService crudService;
+    private final MemberCrudService crudService;
 
     @GetMapping("")
     public ResponseEntity<Api<ResponseDto>> readUser(@RequestBody Long id) {

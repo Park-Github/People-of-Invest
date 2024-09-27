@@ -1,4 +1,4 @@
-package poe.spring.member.dto;
+package poe.spring.domain.member.dto;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
@@ -9,7 +9,7 @@ import lombok.*;
 @ToString
 @Builder
 @JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class RequestDto {
+public class MemberDto {
     private Long id;
     private String email;
     private String password;

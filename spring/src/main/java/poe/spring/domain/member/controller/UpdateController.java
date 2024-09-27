@@ -1,13 +1,13 @@
-package poe.spring.member.controller;
+package poe.spring.domain.member.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import poe.spring.common.Api;
-import poe.spring.member.dto.RequestDto;
-import poe.spring.member.dto.ResponseDto;
-import poe.spring.member.service.CRUDService;
+import poe.spring.domain.member.dto.ResponseDto;
+import poe.spring.domain.member.service.MemberCrudService;
+import poe.spring.domain.member.dto.RequestDto;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;
@@ -18,7 +18,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class UpdateController {
 
-    private final CRUDService crudService;
+    private final MemberCrudService crudService;
 
     @PatchMapping("")
     public ResponseEntity<Api<Map<String, Object>>> updateUser(@RequestBody RequestDto requestDto) {
