@@ -27,13 +27,13 @@ public class MemberCrudService {
         // 사용자 조회 로직
         Member member = memberRepo.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다."));
-        ResponseDto requestDto = modelMapper.map(member, ResponseDto.class);
-        return requestDto;
+        ResponseDto responseDto = modelMapper.map(member, ResponseDto.class);
+        return responseDto;
     }
 
-    public ResponseDto updateUser(RequestDto requestDto) {
+    public ResponseDto updateUser(Long id, RequestDto requestDto) {
         // 사용자 수정 로직
-        Member existingMember = memberRepo.findById(requestDto.getId())
+        Member existingMember = memberRepo.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다."));
         // 이메일
         existingMember.setEmail(Objects.isNull(requestDto.getEmail()) ?
