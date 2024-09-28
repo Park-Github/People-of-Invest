@@ -11,10 +11,10 @@ const toggleSidebar = inject("toggleSidebar");
     <div class="sidebar">
         <div class="sidebar-inner">
             <div class="sidebar-logo">
-                <div class="peers ai-c fxw-nw">
+                <div class="peers align-items-center fw-normal">
                     <div class="peer peer-greed">
                         <a class="sidebar-link td-n" href="index.html">
-                            <div class="peers ai-c fxw-nw">
+                            <div class="peers align-items-center fw-normal">
                                 <div class="peer">
                                     <RouterLink to="/" class="logo">
                                         <img
@@ -24,7 +24,7 @@ const toggleSidebar = inject("toggleSidebar");
                                     </RouterLink>
                                 </div>
                                 <div class="peer peer-greed">
-                                    <h5 class="lh-1 mB-0 logo-text">
+                                    <h5 class="lh-1 mb-0 logo-text">
                                         Smart Invest
                                     </h5>
                                 </div>
@@ -45,11 +45,11 @@ const toggleSidebar = inject("toggleSidebar");
                 </div>
             </div>
 
-            <ul class="sidebar-menu scrollable pos-r">
-                <li class="nav-item mT-30 actived">
+            <ul class="sidebar-menu scrollable position-relative">
+                <li class="nav-item mt-4 actived">
                     <RouterLink to="/" class="sidebar-link">
                         <span class="icon-holder">
-                            <i class="c-deep-orange-500 ti-home"></i>
+                            <span class="material-symbols-outlined">home</span>
                         </span>
                         <span class="title">홈</span>
                     </RouterLink>
@@ -62,11 +62,11 @@ const toggleSidebar = inject("toggleSidebar");
                         aria-expanded="false"
                     >
                         <span class="icon-holder">
-                            <i class="c-brown-500 ti-stats-up"></i>
+                            <span class="material-symbols-outlined">monitoring</span>
                         </span>
                         <span class="title">종목</span>
                         <span class="arrow">
-                            <i class="ti-angle-right"></i>
+                            <span class="material-symbols-outlined">keyboard_arrow_right</span>
                         </span>
                     </a>
                     <ul class="dropdown-menu">
@@ -88,11 +88,11 @@ const toggleSidebar = inject("toggleSidebar");
                         aria-expanded="false"
                     >
                         <span class="icon-holder">
-                            <i class="c-blue-500 ti-world"></i>
+                            <span class="material-symbols-outlined">globe</span>
                         </span>
                         <span class="title">마켓</span>
                         <span class="arrow">
-                            <i class="ti-angle-right"></i>
+                            <span class="material-symbols-outlined">keyboard_arrow_right</span>
                         </span>
                     </a>
                     <ul class="dropdown-menu">
@@ -112,11 +112,11 @@ const toggleSidebar = inject("toggleSidebar");
                         aria-expanded="false"
                     >
                         <span class="icon-holder">
-                            <i class="c-purple-500 ti-pie-chart"></i>
+                            <span class="material-symbols-outlined">pie_chart</span>
                         </span>
                         <span class="title">포트폴리오</span>
                         <span class="arrow">
-                            <i class="ti-angle-right"></i>
+                            <span class="material-symbols-outlined">keyboard_arrow_right</span>
                         </span>
                     </a>
                     <ul class="dropdown-menu">
@@ -138,7 +138,7 @@ const toggleSidebar = inject("toggleSidebar");
                 <li class="nav-item">
                     <RouterLink to="/" class="sidebar-link">
                         <span class="icon-holder">
-                            <i class="c-pink-500 ti-bell"></i>
+                            <span class="material-symbols-outlined">notifications</span>
                         </span>
                         <span class="title">알람</span>
                     </RouterLink>
@@ -146,7 +146,7 @@ const toggleSidebar = inject("toggleSidebar");
                 <li class="nav-item">
                     <RouterLink to="/" class="sidebar-link">
                         <span class="icon-holder">
-                            <i class="c-light-blue-500 ti-user"></i>
+                            <span class="material-symbols-outlined">person</span>
                         </span>
                         <span class="title">프로필 설정</span>
                     </RouterLink>
@@ -154,7 +154,7 @@ const toggleSidebar = inject("toggleSidebar");
                 <li class="nav-item">
                     <RouterLink to="/signin" class="sidebar-link">
                         <span class="icon-holder">
-                            <i class="c-gray-500 ti-user"></i>
+                            <span class="material-symbols-outlined">login</span>
                         </span>
                         <span class="title">로그인</span>
                     </RouterLink>
@@ -162,7 +162,7 @@ const toggleSidebar = inject("toggleSidebar");
                 <li class="nav-item">
                     <RouterLink to="/signup" class="sidebar-link">
                         <span class="icon-holder">
-                            <i class="c-gray-500 ti-user"></i>
+                            <span class="material-symbols-outlined">id_card</span>
                         </span>
                         <span class="title">회원가입</span>
                     </RouterLink>

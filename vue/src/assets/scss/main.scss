@@ -1,6 +1,9 @@
-// @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@charset 'UTF-8';
+
 @import "~bootstrap/scss/bootstrap";
+@import "cs-bootstrap";
+
+@import "colors";
 @import "base";
-@import "customBootstrap";
 @import "shared";
 // @import "layout";

@@ -40,8 +40,9 @@ provide("toggleSidebar", handleSidebarToggle);
 }
 
 .main-content {
-    padding: 85px 20px 20px;
     min-height: calc(100vh - 61px);
+    padding: 85px 20px 20px;
+    background-color: #f9fafb;
 
     @include media-breakpoint-down(lg) {
         padding: 85px 5px 5px;

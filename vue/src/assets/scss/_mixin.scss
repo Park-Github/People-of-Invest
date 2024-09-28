@@ -14,3 +14,11 @@
   &::-moz-placeholder { @content; }
   &:-ms-input-placeholder { @content; }
 }
+
+//----------------------------------------------------------
+// @Calulate rem
+//----------------------------------------------------------
+
+@function rem($px-value) {
+  @return $px-value / 16 * 1rem;
+}

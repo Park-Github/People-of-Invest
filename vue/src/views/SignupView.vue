@@ -6,7 +6,7 @@
             <div class="sign-logo">
                 <img
                     class="img-fluid"
-                    src="@/assets/img/logo-ga.svg"
+                    src="@/assets/img/logo.svg"
                     alt=""
                 />
             </div>
