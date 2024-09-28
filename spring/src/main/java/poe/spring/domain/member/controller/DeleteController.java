@@ -8,14 +8,14 @@ import poe.spring.common.Api;
 import poe.spring.domain.member.service.MemberCrudService;
 
 @RestController
-@RequestMapping("/delete/user")
+@RequestMapping("/user/{id}/delete")
 @RequiredArgsConstructor
 public class DeleteController {
 
     private final MemberCrudService crudService;
 
     @DeleteMapping("")
-    public ResponseEntity<Api<Void>> deleteUser(@RequestBody Long id) {
+    public ResponseEntity<Api<Void>> deleteUser(@PathVariable Long id) {
 
         // 사용자 삭제 로직
         crudService.deleteUser(id);

@@ -5,26 +5,33 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import poe.spring.common.Api;
+import poe.spring.common.MapConverter;
 import poe.spring.domain.member.dto.ResponseDto;
 import poe.spring.domain.member.service.MemberCrudService;
 
+import java.util.Map;
+
 @RestController
-@RequestMapping("/read/user")
+@RequestMapping("/user/{id}/read")
 @RequiredArgsConstructor
 public class ReadController {
 
     private final MemberCrudService crudService;
 
     @GetMapping("")
-    public ResponseEntity<Api<ResponseDto>> readUser(@RequestBody Long id) {
+    public ResponseEntity<Api<Map<String, Object>>> readUser(@PathVariable Long id) {
 
         // 사용자 정보 조회 로직
         ResponseDto responseDto = crudService.readUser(id);
+        responseDto.setId(null);
 
-        Api<ResponseDto> response = Api.<ResponseDto>builder()
+        MapConverter<ResponseDto> mapConverter = new MapConverter<>();
+        Map<String, Object> data = mapConverter.convertToMap(responseDto);
+
+        Api<Map<String, Object>> response = Api.<Map<String, Object>>builder()
                 .statusCode(HttpStatus.OK.getReasonPhrase())
                 .resultMessage("Successfully read member information")
-                .data(responseDto)
+                .data(data)
                 .build();
         return ResponseEntity.status(HttpStatus.OK)
                 .body(response);

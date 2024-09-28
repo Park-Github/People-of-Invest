@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/create/user")
+@RequestMapping("/user/create")
 @RequiredArgsConstructor
 public class CreateController {
 
