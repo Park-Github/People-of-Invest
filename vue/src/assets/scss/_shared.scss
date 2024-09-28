@@ -7,7 +7,7 @@
 .fs-md   { font-size: 0.938rem !important; }
 .fs-lg   { font-size: 1rem !important; }
 .fs-xl   { font-size: 1.125rem !important; }
-.fs-body  { font-size: 0.875rem !important; }
+.fs-body  { font-size: var(--font-size) !important; }
 
 // ---------------------------------------------------------
 // @Font Weight
@@ -66,5 +66,12 @@
   > .peer,
   > .peers {
     flex: 1 1 auto;
+  }
+}
+
+.required {
+  &:after {
+    content: '*';
+    color: #f0295a;
   }
 }

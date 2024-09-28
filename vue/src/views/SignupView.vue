@@ -1,9 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-    <div class="sign-container">
-        <div class="sign-bg">
-            <div class="sign-logo">
+    <div class="login-container">
+        <div class="login-bg">
+            <div class="login-logo">
                 <img
                     class="img-fluid"
                     src="@/assets/img/logo.svg"
@@ -12,51 +12,52 @@
             </div>
         </div>
 
-        <div class="sign-form">
-            <h4 class="fw-300 c-grey-900 mB-40">회원가입</h4>
-            <form>
-                <div class="mb-3">
-                    <label class="form-label text-normal text-dark">
-                        Username
-                    </label>
-                    <input
-                        type="text"
-                        class="form-control"
-                        Placeholder="John Doe"
-                    />
-                </div>
-                <div class="mb-3">
-                    <label class="form-label text-normal text-dark">
-                        Email Address
-                    </label>
-                    <input
-                        type="email"
-                        class="form-control"
-                        Placeholder="name@email.com"
-                    />
-                </div>
-                <div class="mb-3">
-                    <label class="form-label text-normal text-dark">
-                        Password
-                    </label>
-                    <input
-                        type="password"
-                        class="form-control"
-                        placeholder="Password"
-                    />
-                </div>
-                <div class="mb-3">
-                    <label class="form-label text-normal text-dark">
-                        Confirm Password
-                    </label>
-                    <input
-                        type="password"
-                        class="form-control"
-                        placeholder="Password"
-                    />
-                </div>
-                <div class="mb-3">
-                    <button class="btn btn-primary btn-color">가입하기</button>
+        <div class="login-form-wrap">
+            <form class="login-form">
+                <div class="login-form-body">
+                    <h4 class="fw-300 c-grey-900 mb-4">회원가입</h4>
+                    <div class="mb-3">
+                        <label class="form-label required">
+                            이메일
+                        </label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="name@email.com"
+                        />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label required">
+                            인증번호
+                        </label>
+                        <input
+                            type="number"
+                            class="form-control" required
+                        />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label required">
+                            비밀번호
+                        </label>
+                        <input
+                            type="password"
+                            class="form-control"
+                            placeholder="비밀번호" required
+                        />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label required">
+                            비밀번호 확인
+                        </label>
+                        <input
+                            type="password"
+                            class="form-control"
+                            placeholder="비밀번호 확인" required
+                        />
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary w-100" disabled>가입하기</button>
+                    </div>
                 </div>
             </form>
         </div>
@@ -64,7 +65,7 @@
 </template>
 
 <style scoped lang="scss">
-.sign-container {
+.login-container {
     display: flex;
     align-items: stretch;
     justify-content: flex-start;
@@ -73,14 +74,15 @@
     margin: 0;
     padding: 0;
 }
-.sign-bg {
+.login-bg {
     flex: 1 1 auto;
     position: relative;
     height: 100%;
     background: url(@/assets/img/bg.jpeg) no-repeat center center;
     background-size: cover;
 }
-.sign-logo {
+
+.login-logo {
     position: absolute;
     top: 50px;
     left: 50px;
@@ -90,18 +92,57 @@
     background-color: #fff;
     border-radius: 15px;
 }
-.sign-form {
-    flex: 0 0 auto;
+
+.login-form-wrap {
     position: relative;
+    flex: 0 0 auto;
     height: 100%;
     width: 100%;
-    min-width: 320px;
-    overflow-y: auto;
-    padding: 80px 40px;
     background-color: #fff;
 
-    @media (min-width: 768px) {
-        width: 33.33333333%;
+    @include media-breakpoint-up(lg) {
+        width: 500px;
     }
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    max-width: 550px;
+    margin: 2rem auto;
+
+    &-header {
+        padding: 3rem 5rem;
+        font-size: 2.2rem;
+        font-weight: 600;
+    }
+
+    &-body {
+        flex: 1 1 auto;
+        overflow-y: auto;
+        padding: 2rem 5rem;
+    }
+
+    &-footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 0.25rem;
+        padding: 0 5rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+        &-footer {
+            gap: 0.5rem;
+        }
+    }
+}
+
+.form-label,
+.form-check-label {
+    font-size: var(--font-size);
+    color: var(--body-color);
 }
 </style>
