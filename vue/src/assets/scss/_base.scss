@@ -1,16 +1,20 @@
 :root {
-    --primary-color      : #7774e7;
-    --success-color      : #37c936;
-    --danger-color       : #ff3c7e;
-    --info-color         : #0f9aee;
-    --warning-color      : #fc0;
-    --dark-color         : #313435;
-    --grey-color         : #565a5c;
-    --muted-color         : #72777a;
+    --primary-color      : $primary; // 9c0d38 ce5374 dbbbf5 ddf0ff
+    --secondary-color    : $secondary;
+    --tertiary-color     : $thertiary;
+    --quaternary-color   : $quaternary;
 
-    --heading-color: #232433;
-    --body-color: 35, 36, 51;
-    --border-color: rgba(0, 0, 0, 0.0625);
+    --success-color      : $success;
+    --danger-color       : $danger;
+    --info-color         : $info;
+    --warning-color      : $warning;
+    --light-color        : $light;
+    --dark-color         : $dark;
+    --muted-color        : #72777a;
+
+    // --heading-color:  $body-color;
+    --body-color: $body-color;
+    --border-color: $border-color;
 
     --font-primary: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
     --font-size: 0.875rem;

@@ -1,4 +1,4 @@
-// @import 'material-colors';
+@import 'material-colors';
 
 // ---------------------------------------------------------
 // @Greyscale Colors
@@ -32,16 +32,51 @@ $grey-colors-alt: (
 // @Bootstrap Color System
 // ---------------------------------------------------------
 
-$blue   : $md-blue-500;
-$indigo : $md-indigo-500;
-$purple : $md-purple-500;
-$pink   : $md-pink-500;
-$red    : $md-red-500;
-$orange : $md-orange-500;
-$yellow : $md-yellow-500;
-$green  : $md-green-500;
-$teal   : $md-teal-500;
-$cyan   : $md-cyan-500;
+// $blue   : $md-blue-500;
+// $indigo : $md-indigo-500;
+// $purple : $md-purple-500;
+// $pink   : $md-pink-500;
+// $red    : $md-red-500;
+// $orange : $md-orange-500;
+// $yellow : $md-yellow-500;
+// $green  : $md-green-500;
+// $teal   : $md-teal-500;
+// $cyan   : $md-cyan-500;
+
+// ---------------------------------------------------------
+// @Themes
+// ---------------------------------------------------------
+
+$primary: #0F3758;
+$secondary: #4E5D6C;
+$secondary-bg: #e9ecee;
+$teriary: #F28C54;
+$quaternary: #5DADE2;
+
+$success: #3e8d63;
+$info: $quaternary;
+$warning: #b8c924;
+$danger: #9C0D38; // d62518;
+$light: #f5f5f5; // f8f9fa;
+$dark: #4E5D6C; // 343a40;
+
+$theme-colors: (
+  primary: $primary,
+  secondary: $secondary,
+  secondary-bg: $secondary-bg,
+  quaternary: $quaternary,
+  success: $success,
+  info: $info,
+  warning: $warning,
+  danger: $danger,
+  light: $light,
+  dark: $dark,
+);
+
+$body-bg: #FFFFFF;
+$body-color: #000000;
+$border-color: #d4d8e2; // rgba(0, 0, 0, 0.0625);
+
 
 // ---------------------------------------------------------
 // @Default Colors

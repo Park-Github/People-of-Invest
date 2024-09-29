@@ -1,6 +1,6 @@
 :root {
-  --bs-body-color: var(--body-color);
-  --bs-body-color-rgb: var(--body-color-rgb);
+  --bs-btn-font-size: var(--font-size);
+  --bs-btn-font-weight: 500;
 }
 
 // ---------------------------------------------------------
@@ -19,24 +19,27 @@
 
 .btn,
 .form-control {
+  &-sm {
+    font-size: calc(var(--font-size) * 0.85);
+  }
   &-lg {
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: calc(var(--font-size) * 1.125);
   }
 }
 
-.btn {
-  &-primary.disabled,
-  &-primary:disabled {
-    color: #b4b6bc;
-    background-color: #e9ecee;
-    border-color: #e9ecee;
-  }
-}
+// .btn {
+//   &-primary.disabled,
+//   &-primary:disabled {
+//     color: #b4b6bc;
+//     background-color: #e9ecee;
+//     border-color: #e9ecee;
+//   }
+// }
 
 
 .form-control {
-  --bs-border-color: #d4d8e2;
+  // --bs-border-color: #d4d8e2;
+
   &::placeholder {
     color: #b4b6bc;
   }
@@ -44,5 +47,10 @@
   &:focus {
     box-shadow: none;
     border-color: var(--primary-color);
+  }
+
+  &:read-only {
+    --bs-body-color: #748194;
+    --bs-body-bg: #f5f5f5;
   }
 }

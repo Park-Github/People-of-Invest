@@ -22,7 +22,7 @@ export default defineConfig({
                     @import "./node_modules/pretendard/dist/web/static/pretendard.css"; 
                     @import "./node_modules/material-symbols/index.css"; 
                     @import "./node_modules/bootstrap/scss/bootstrap-utilities.scss";   // Bootstrap utilities
-                    @import "@/assets/scss/_material-colors.scss"; // material color 변수
+                    @import "@/assets/scss/_colors.scss"; // material color 변수
                     @import "@/assets/scss/_mixin.scss";   // 사용자 정의 믹스인
                 `,
             },

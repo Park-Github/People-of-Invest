@@ -150,19 +150,21 @@
     background-color: #fff;
 
     @include media-breakpoint-up(lg) {
-        width: 500px;
+        width: 550px;
     }
 }
 
 .login-form {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    height: 100%;
     min-width: 0;
     max-width: 550px;
-    margin: 2rem auto;
+    margin: 0 auto;
 
     &-header {
-        padding: 3rem 5rem;
+        padding: 4rem 5rem 1rem;
         font-size: 2.2rem;
         font-weight: 600;
     }
@@ -179,7 +181,7 @@
         justify-content: center;
         align-items: center;
         gap: 0.25rem;
-        padding: 0 5rem;
+        padding: 1rem 5rem 2rem;
     }
 
     @include media-breakpoint-up(lg) {
