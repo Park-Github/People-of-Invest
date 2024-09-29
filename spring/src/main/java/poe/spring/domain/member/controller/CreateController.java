@@ -22,24 +22,28 @@ public class CreateController {
     private final MemberCrudService crudService;
 
     @PostMapping("/email")
-    public ResponseEntity<Api<Map<String, Object>>> createUser(@RequestBody RequestDto requestDto) {
+    public ResponseEntity<Api<Map<String, Long>>> createUser(@RequestBody RequestDto requestDto) {
 
         Long id = crudService.createUser(requestDto);
 
-        Map<String, Object> data = new HashMap<>();
+        Map<String, Long> data = new HashMap<>();
         data.put("member_id", id);
 
-        Api<Map<String, Object>> response = Api.<Map<String, Object>>builder()
+        Api<Map<String, Long>> response = Api.<Map<String, Long>>builder()
                 .data(data)
-                .statusCode(HttpStatus.CREATED.getReasonPhrase())
+                .statusCode(String.valueOf(HttpStatus.CREATED.value()))
                 .resultMessage("Created a new member successfully.").build();
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(response);
     }
 
     @PostMapping("/email/auth")
-    public void authUserEmail(@RequestBody String email) {}
+    public void authUserEmail() {}
 
     @PostMapping("/email/auth-confirm")
-    public void confirmEmailAuth(@RequestBody String authNumber) {}
+    public void confirmEmailAuth() {}
+
+    @PostMapping("/sns")
+    public void createSnsUser() {}
+
 }

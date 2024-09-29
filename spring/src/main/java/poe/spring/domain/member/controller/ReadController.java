@@ -12,7 +12,7 @@ import poe.spring.domain.member.service.MemberCrudService;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/user/{id}/read")
+@RequestMapping("/user/read/{id}")
 @RequiredArgsConstructor
 public class ReadController {
 
@@ -23,7 +23,6 @@ public class ReadController {
 
         // 사용자 정보 조회 로직
         ResponseDto responseDto = crudService.readUser(id);
-        responseDto.setId(null);
 
         MapConverter<ResponseDto> mapConverter = new MapConverter<>();
         Map<String, Object> data = mapConverter.convertToMap(responseDto);
