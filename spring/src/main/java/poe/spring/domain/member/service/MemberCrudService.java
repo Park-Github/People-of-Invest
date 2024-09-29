@@ -26,7 +26,7 @@ public class MemberCrudService {
     public ResponseDto readUser(Long id) {
         // 사용자 조회 로직
         Member member = memberRepo.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다."));
+                .orElseThrow(() -> new IllegalArgumentException("Member does not exist."));
         ResponseDto responseDto = modelMapper.map(member, ResponseDto.class);
         return responseDto;
     }
@@ -34,7 +34,7 @@ public class MemberCrudService {
     public ResponseDto updateUser(Long id, RequestDto requestDto) {
         // 사용자 수정 로직
         Member existingMember = memberRepo.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다."));
+                .orElseThrow(() -> new IllegalArgumentException("Member does not exist."));
         // 이메일
         existingMember.setEmail(Objects.isNull(requestDto.getEmail()) ?
                 existingMember.getEmail() : requestDto.getEmail());
@@ -51,7 +51,7 @@ public class MemberCrudService {
     public void deleteUser(Long id) {
         // 사용자 삭제 로직
         Member member = memberRepo.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다."));
+                .orElseThrow(() -> new IllegalArgumentException("Member does not exist."));
         memberRepo.delete(member);
     }
 }
