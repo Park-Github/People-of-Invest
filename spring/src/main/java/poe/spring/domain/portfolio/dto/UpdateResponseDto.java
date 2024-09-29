@@ -12,12 +12,10 @@ import lombok.ToString;
 @ToString
 @Builder
 @JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class PortfolioDto {
+public class UpdateResponseDto {
 
     private Long id;
 
     private String name;
-
-    private Long memberId;
 
 }

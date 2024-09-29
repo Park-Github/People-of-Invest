@@ -21,7 +21,7 @@ public class DeleteController {
         crudService.deleteUser(id);
 
         Api<Void> response = Api.<Void>builder()
-                .statusCode(HttpStatus.OK.getReasonPhrase())
+                .statusCode(String.valueOf(HttpStatus.OK.value()))
                 .resultMessage("Member deleted successfully.").build();
         return ResponseEntity.status(HttpStatus.OK)
                 .body(response);
