@@ -5,7 +5,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import poe.spring.common.Api;
-import poe.spring.domain.portfolio.dto.UpdateResponseDto;
 import poe.spring.domain.portfolio.service.PortfolioCrudService;
 
 import java.util.HashMap;

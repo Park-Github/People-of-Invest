@@ -13,7 +13,6 @@ import lombok.ToString;
 @Builder
 @JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class ResponseDto {
-    private Long id;
     private String email;
     private String phoneNumber;
 }

@@ -22,7 +22,8 @@ public class SnsMember {
     @Column(name = "refresh_token")
     private String refreshToken;
 
-    @OneToOne @JoinColumn(name = "member_id")
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_id")
     private Member member;
 
 }

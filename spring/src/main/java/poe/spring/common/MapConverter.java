@@ -1,9 +1,14 @@
 package poe.spring.common;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Component;
+
 import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.Map;
 
+@Component
 public class MapConverter<T> {
 
     public String snakeCaseConverter(String camelCase) {
