@@ -1,200 +1,163 @@
 <script setup lang="ts"></script>
 
 <template>
-    <div class="login-container">
-        <div class="login-bg">
-            <div class="login-logo">
-                <img
-                    class="img-fluid"
-                    src="@/assets/img/logo.svg"
-                    alt=""
-                />
+    <div class="container-fluid sign-container">
+        <form class="form sign-form">
+            <h2 class="form-header">
+                Smart Invest 에 오신 것을<br /> 환영합니다!
+            </h2>
+
+            <div class="form-body">
+                <div class="mb-3">
+                    <label class="form-label required">
+                        이메일
+                    </label>
+                    <input
+                        type="email"
+                        class="form-control form-control-lg"
+                        placeholder="이메일을 입력하세요."
+                        required
+                    />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label required">
+                        비밀번호
+                    </label>
+                    <input
+                        type="password"
+                        class="form-control form-control-lg"
+                        placeholder="비밀번호를 입력하세요."
+                        required
+                    />
+                </div>
+                <div class="form-check mb-3">
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        value=""
+                        id="flexCheckDefault"
+                    />
+                    <label class="form-check-label" for="flexCheckDefault">
+                        로그인 정보 저장
+                    </label>
+                </div>
+                <button type="button" class="btn btn-primary w-100 mb-5">
+                    로그인
+                </button>
+                
+                <div class="row row-cols-xl-2 g-2 mb-5">
+                    <div class="col">
+                        <button
+                            type="button"
+                            class="btn btn-sns btn-kakao"
+                            onclick="location.href='/oauth2/authorization/kakao'"
+                        >
+                            <img src="@/assets/img/kakao.png" alt="Kakao">
+                            카카오로 계속하기
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button
+                            type="button"
+                            class="btn btn-sns btn-naver"
+                            onclick="location.href='/oauth2/authorization/naver'"
+                        >
+                            <img src="@/assets/img/naver.png" alt="Naver" />
+                            네이버로 계속하기
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button
+                            type="button"
+                            class="btn btn-sns btn-apple"
+                            onclick="location.href='/oauth2/authorization/apple'"
+                        >
+                            <img src="@/assets/img/apple.png" alt="Apple" />
+                            Apple로 계속하기
+                        </button>
+                    </div>
+                    <div class="col">
+                        <button
+                            type="button"
+                            class="btn btn-sns btn-google"
+                            onclick="location.href='/oauth2/authorization/google'"
+                        >
+                            <img src="@/assets/img/google.png" alt="Google" />
+                            Google로 계속하기
+                        </button>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="login-form-wrap">
-            <form class="login-form">
-                <h2 class="login-form-header">
-                    Smart Invest 에 오신 것을<br /> 환영합니다!
-                </h2>
-
-                <div class="login-form-body">
-                    <div class="mb-3">
-                        <label class="form-label required">
-                            이메일
-                        </label>
-                        <input
-                            type="email"
-                            class="form-control form-control-lg"
-                            placeholder="이메일을 입력하세요."
-                            required
-                        />
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label required">
-                            비밀번호
-                        </label>
-                        <input
-                            type="password"
-                            class="form-control form-control-lg"
-                            placeholder="비밀번호를 입력하세요."
-                            required
-                        />
-                    </div>
-                    <div class="form-check mb-3">
-                        <input
-                            class="form-check-input"
-                            type="checkbox"
-                            value=""
-                            id="flexCheckDefault"
-                        />
-                        <label class="form-check-label" for="flexCheckDefault">
-                            로그인 정보 저장
-                        </label>
-                    </div>
-                    <button type="button" class="btn btn-primary w-100 mb-5" disabled>
-                        로그인
-                    </button>
-                    
-                    <div class="row row-cols-xl-2 g-2 mb-5">
-                        <div class="col">
-                            <button
-                                type="button"
-                                class="btn btn-sns btn-kakao"
-                                onclick="location.href='/oauth2/authorization/kakao'"
-                            >
-                                <img src="@/assets/img/kakao.png" alt="Kakao">
-                                카카오로 계속하기
-                            </button>
-                        </div>
-                        <div class="col">
-                            <button
-                                type="button"
-                                class="btn btn-sns btn-naver"
-                                onclick="location.href='/oauth2/authorization/naver'"
-                            >
-                                <img src="@/assets/img/naver.png" alt="Naver" />
-                                네이버로 계속하기
-                            </button>
-                        </div>
-                        <div class="col">
-                            <button
-                                type="button"
-                                class="btn btn-sns btn-apple"
-                                onclick="location.href='/oauth2/authorization/apple'"
-                            >
-                                <img src="@/assets/img/apple.png" alt="Apple" />
-                                Apple로 계속하기
-                            </button>
-                        </div>
-                        <div class="col">
-                            <button
-                                type="button"
-                                class="btn btn-sns btn-google"
-                                onclick="location.href='/oauth2/authorization/google'"
-                            >
-                                <img src="@/assets/img/google.png" alt="Google" />
-                                Google로 계속하기
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="login-form-footer">
-                    <button type="button" class="btn-link">아이디 찾기</button>
-                    <span class="vr align-self-center"></span>
-                    <button type="button" class="btn-link">비밀번호 찾기</button>
-                    <span class="vr align-self-center"></span>
-                    <RouterLink to="/signup" type="button" class="btn-link">회원가입</RouterLink>
-                </div>
-            </form>
-        </div>
+            <div class="form-footer">
+                <button type="button" class="btn-link">아이디 찾기</button>
+                <span class="vr align-self-center"></span>
+                <button type="button" class="btn-link">비밀번호 찾기</button>
+                <span class="vr align-self-center"></span>
+                <RouterLink to="/signup" type="button" class="btn-link">회원가입</RouterLink>
+            </div>
+        </form>
     </div>
 </template>
 
 <style scoped lang="scss">
-.login-container {
-    display: flex;
-    align-items: stretch;
-    justify-content: flex-start;
-    height: 100vh;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.login-logo {
-    position: absolute;
-    top: 50px;
-    left: 50px;
-    width: 120px;
-    height: 120px;
-    padding: 15px;
-    background-color: #fff;
-    border-radius: 15px;
-}
-
-.login-bg {
-    flex: 1 1 auto;
-    position: relative;
-    height: 100%;
-    background: url(@/assets/img/bg.jpeg) no-repeat center center;
-    background-size: cover;
-}
-
-.login-form-wrap {
-    position: relative;
-    flex: 0 0 auto;
-    height: 100%;
-    width: 100%;
-    background-color: #fff;
-
-    @include media-breakpoint-up(lg) {
-        width: 550px;
-    }
-}
-
-.login-form {
+.sign-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    min-height: 0;
+    background-color: #d5d5d5;
+    // background-color: #21D4FD;
+	// background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+    @include media-breakpoint-down(md) {
+        padding: 0;
+    }
+}
+
+.sign-form {
     overflow: hidden;
-    height: 100%;
-    min-width: 0;
-    max-width: 550px;
-    margin: 0 auto;
+    max-width: 500px;
+    border-radius: 1rem;
+    background-color: #fff;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: all .32s ease-in;
 
-    &-header {
-        padding: 4rem 5rem 1rem;
-        font-size: 2.2rem;
+    .form-header {
+        padding: 4rem 4rem 1rem;
+        font-size: 2.1rem;
         font-weight: 600;
+        letter-spacing: -0.5px;
     }
 
-    &-body {
-        flex: 1 1 auto;
+    .form-body {
         overflow-y: auto;
-        padding: 2rem 5rem;
+        padding: 2rem 4rem;
     }
 
-    &-footer {
+    .form-footer {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         gap: 0.25rem;
-        padding: 1rem 5rem 2rem;
+        padding: 1rem 4rem 2rem;
+    }
+
+    @include media-breakpoint-down(md) {
+        box-shadow: none;
+        border-radius: 0;
+        max-width: 100%;
+        width: 100%;
+        height: 100%;
     }
 
     @include media-breakpoint-up(lg) {
-        &-footer {
+        .form-footer {
             gap: 0.5rem;
         }
     }
-}
-
-.form-label,
-.form-check-label {
-    font-size: var(--font-size);
-    color: var(--body-color);
 }
 
 .btn {

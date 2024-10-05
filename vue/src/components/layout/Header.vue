@@ -262,7 +262,7 @@ const toggleSearch = () => {
     margin-bottom: 0;
     padding: 0;
     background-color: #fff;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.0625);
     transition: all 0.2s ease;
     z-index: 800;
 

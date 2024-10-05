@@ -14,11 +14,10 @@
 }
 
 // ---------------------------------------------------------
-// @Button & Form
+// @Button
 // ---------------------------------------------------------
 
-.btn,
-.form-control {
+.btn {
   &-sm {
     font-size: calc(var(--font-size) * 0.85);
   }
@@ -37,8 +36,25 @@
 // }
 
 
+// ---------------------------------------------------------
+// @Form
+// ---------------------------------------------------------
+
+.form-label,
+.form-check-label {
+    font-size: var(--font-size);
+    color: var(--body-color);
+}
+
 .form-control {
   // --bs-border-color: #d4d8e2;
+
+  &-sm {
+    font-size: calc(var(--font-size) * 0.85);
+  }
+  &-lg {
+    font-size: calc(var(--font-size) * 1.125);
+  }
 
   &::placeholder {
     color: #b4b6bc;

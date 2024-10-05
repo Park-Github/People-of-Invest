@@ -13,7 +13,7 @@ const toggleSidebar = inject("toggleSidebar");
             <div class="sidebar-logo">
                 <div class="peers align-items-center fw-normal">
                     <div class="peer peer-greed">
-                        <a class="sidebar-link td-n" href="index.html">
+                        <a class="sidebar-link text-decoration-none" href="index.html">
                             <div class="peers align-items-center fw-normal">
                                 <div class="peer">
                                     <RouterLink to="/" class="logo">
@@ -35,10 +35,10 @@ const toggleSidebar = inject("toggleSidebar");
                         <div class="mobile-toggle sidebar-toggle">
                             <a
                                 href="javascript:void(0);"
-                                class="td-n"
+                                class="text-decoration-none"
                                 @click="toggleSidebar"
                             >
-                                <i class="ti-arrow-circle-left"></i>
+                                <span class="material-symbols-outlined" style="transform: rotate(180deg);">expand_circle_right</span>
                             </a>
                         </div>
                     </div>
@@ -286,8 +286,8 @@ const toggleSidebar = inject("toggleSidebar");
 }
 
 .sidebar-logo {
-    border-bottom: 1px solid var(--border-color);
-    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.0625);
+    border-right: 1px solid rgba(0, 0, 0, 0.0625);
     line-height: 0;
     padding: 0 20px;
     transition: all 0.2s ease;
@@ -319,7 +319,7 @@ const toggleSidebar = inject("toggleSidebar");
     }
 
     .mobile-toggle {
-        display: none;
+        display: inline-block;
         float: right;
         font-size: 18px;
         line-height: calc(#{var(--header-height)} - 1px);
@@ -328,19 +328,23 @@ const toggleSidebar = inject("toggleSidebar");
             color: var(--text-color);
         }
 
-        @include media-breakpoint-down(lg) {
-            display: inline-block;
-        }
-
-        @include media-breakpoint-between(lg, xxl) {
+        @include media-breakpoint-up(xl) {
             display: none;
         }
+
+        // @include media-breakpoint-down(lg) {
+        //     display: inline-block;
+        // }
+
+        // @include media-breakpoint-between(lg, xxl) {
+        //     display: none;
+        // }
     }
 }
 
 .sidebar-menu {
     @include clearfix;
-    border-right: 1px solid var(--border-color);
+    border-right: 1px solid rgba(0, 0, 0, 0.0625);
     height: calc(100vh - #{var(--header-height)});
     list-style: none;
     margin: 0;
@@ -372,9 +376,9 @@ const toggleSidebar = inject("toggleSidebar");
         &.dropdown {
             .arrow {
                 font-size: 10px;
-                line-height: 40px;
                 position: absolute;
                 right: 30px;
+                color: #aaa;
                 transition: all 0.05s ease-in;
 
                 @include media-breakpoint-down(lg) {
